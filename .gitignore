@@ -1,0 +1,23 @@
+# Cypress specific
+/cypress/videos/
+/cypress/screenshots/
+/cypress/results/
+/cypress/fixtures/
+/cypress/plugins/
+/cypress/support/
+/cypress/logs/
+/cypress/.cache/
+/cypress/.run/
+/cypress/report/
+/cypress/report.html
+/cypress.json
+
+# Appium specific
+/node_modules/
+/platforms/
+/*.apk
+/*.app
+*.appium
+*.debug
+*.trace
+/build/
