@@ -18,6 +18,7 @@ describe('Signup Page 1 - Nonexistent email', () => {
     cy.get(signupObj.emailIconBackground).should('exist');
     cy.get(signupObj.emailIcon).should('exist');
     cy.get(signupObj.closePopupBtn).should('be.visible');
+    cy.wait(5000)
     cy.get(signupObj.closePopupBtn).click();
     
   })
