@@ -18,6 +18,7 @@ class Signup {
     emailIconBackground = ".eds-vector-image.eds-icon--medium.eds-vector-image--ui-700"
     emailIcon = "#mail-chunky_svg__eds-icon--mail-chunky_base"
     popupText = ".eds-text--center.eds-text-color--grey-600.eds-text-bm.eds-l-mar-hor-3"
+    errorNotification = '.eds-notification-bar'
 
 
     // Signup2
