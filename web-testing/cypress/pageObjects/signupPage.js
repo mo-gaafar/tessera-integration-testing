@@ -1,4 +1,5 @@
-class Signup {
+class Signup 
+{
     // ------------Selectors------------
 
     // Signup1
