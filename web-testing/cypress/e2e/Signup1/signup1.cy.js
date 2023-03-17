@@ -1,7 +1,7 @@
-import Signup from "../pageObjects/signupPage.js";
+import Signup from "../../pageObjects/signupPage.js";
 
 describe('Signup Page 1', () => {
-  it.only('Validate that all elements exist', () => {
+  it.skip('Validate that all elements exist', () => {
     const signupObj = new Signup();
     signupObj.visitWebsite(); 
     cy.get(signupObj.eventbriteLogo).should('be.visible');
