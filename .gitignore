@@ -2,9 +2,7 @@
 */cypress/videos/
 */cypress/screenshots/
 */cypress/results/
-*/cypress/fixtures/
 */cypress/plugins/
-*/cypress/support/
 */cypress/logs/
 */cypress/.cache/
 */cypress/.run/
