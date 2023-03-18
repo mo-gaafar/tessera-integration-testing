@@ -15,5 +15,22 @@ describe('Signup Page 1 - Incorrect email', () => {
     cy.get(signupObj.confirmEmailInput).should('not.exist');
     
   })
+
+  it("Signup for new account with an email missing .com", () => {
+    const signupObj = new Signup();
+    signupObj.visitWebsite();
+    signupObj.setEmail("incorrectEmail@");
+    cy.get(signupObj.continueBtn).click();
+    cy.get(signupObj.confirmEmailInput).should("not.exist");
+  });
+
+  it("Signup for new account with an email missing @", () => {
+    const signupObj = new Signup();
+    signupObj.visitWebsite();
+    signupObj.setEmail("incorrectEmail.com");
+    cy.get(signupObj.continueBtn).click();
+    cy.get(signupObj.confirmEmailInput).should("not.exist");
+  });
+
 })
 
