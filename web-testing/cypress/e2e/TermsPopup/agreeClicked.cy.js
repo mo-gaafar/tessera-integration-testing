@@ -1,7 +1,7 @@
 import TermsNconditions from "../../pageObjects/termsNconditions.js";
 import Signup from "../../pageObjects/signupPage.js";
 
-describe("Signup Page 2 - Normal case", () => {
+describe("Signup Page - Agree to terms", () => {
   it.only("Validate terms and conditions popup elements exist", () => {
     const signupObj = new Signup();
     const termObj = new TermsNconditions();
@@ -30,12 +30,8 @@ describe("Signup Page 2 - Normal case", () => {
     // this block differs among tests
 
     cy.get(termObj.agreeButton).click();
-    cy.get(termObj.enteredEmail).should('exist');
-
-    cy.fixture("userMichael.json").then((data) => {
-      const termObj = new TermsNconditions();
-      cy.get(termObj.enteredEmail).should("have.text", data.email);
-    });
+    cy.wait(5000);
+    cy.url().should("not.be.equal", "https://www.eventbrite.com/signin/signup");
    
 
 

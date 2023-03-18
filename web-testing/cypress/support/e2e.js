@@ -18,3 +18,7 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+require('cypress-xpath'); // for xpath
+// require('cypress-iframe'); // for handling iframes
+// require('@4tw/cypress-drag-drop') // for drag and drops
+// require('cypress-file-upload')
