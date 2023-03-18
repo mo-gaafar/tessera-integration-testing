@@ -2,7 +2,7 @@ class TermsNconditions {
   // ------------Selectors------------
 
   // Terms and conditions popup
-  TermsTitle = "#edsModalContentChildren";
+  termsTitle = "#edsModalContentChildren";
   logoBgd = "#edsModalContentChildren";
   agreeStatement = "#edsModalContentChildren";
   cancelButton = '[data-testid="signup-tos-form-button-cancel"]';
@@ -23,8 +23,8 @@ class TermsNconditions {
   guidelinesTitle = ".h1 > :nth-child(3)";
 
   // Home Page
-  enteredEmail =
-    ".eds-global-header__user-menu > :nth-child(1) > .eds-dropdown-menu > .eds-dropdown-menu__link > .eds-dropdown-menu__contents > .eds-global-header__menu-label";
+  interestsTitle = ".onboarding-reditecion__tittle";
+  eventbriteLogo = ".eds-global-header__logo-link";
 
   // ------------Methods------------
 
@@ -41,7 +41,7 @@ class TermsNconditions {
   }
 
   validateTermsElements() {
-    cy.get(this.TermsTitle).should("exist");
+    cy.get(this.termsTitle).should("exist");
     cy.get(this.logoBgd).should("exist");
     cy.get(this.agreeStatement).should("exist");
     cy.get(this.cancelButton).should("exist");

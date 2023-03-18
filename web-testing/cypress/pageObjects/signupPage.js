@@ -28,7 +28,7 @@ class Signup {
   fnameInput = "#firstName";
   lnameInput = "#lastName";
   passwordInput = "#password";
-  passwordStrengthIndicator = ".eds-progress-indicator--linear__rail";
+  passwordStrengthIndicator = ".eds-progress-indicator--linear__line";
   createAccountBtn = '[data-testid="signup-submit-button"]';
   yourPasswordMsg = ".eds-l-pad-top-2 > :nth-child(1)";
   passwordStrengthMsg = ".eds-l-pad-top-2 > .eds-text-weight--heavy";
