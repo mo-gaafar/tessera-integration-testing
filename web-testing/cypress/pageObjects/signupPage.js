@@ -22,6 +22,12 @@ class Signup {
     ".eds-text--center.eds-text-color--grey-600.eds-text-bm.eds-l-mar-hor-3";
   errorNotification = ".eds-notification-bar";
   emptyEmailMsg = ".eds-field-styled__annotation";
+  existentAccountAlert = ".eds-notification-bar";
+  existentAccountMsg =
+    "div[class='eds-notification-bar__content-child'] strong";
+  alertLogin =
+    "div[class='eds-notification-bar__content-child'] button[type='button']";
+  alertIcon = ".eds-notification-bar__icon";
 
   // Signup2
   confirmEmailInput = '[data-testid="auth-lib-confirm-email-field"]';
@@ -33,8 +39,6 @@ class Signup {
   yourPasswordMsg = ".eds-l-pad-top-2 > :nth-child(1)";
   passwordStrengthMsg = ".eds-l-pad-top-2 > .eds-text-weight--heavy";
   termsNconditionsPopup = "#edsModalContentChildren";
-
-  // cy.get(this.passwordStrengthIndicator).should('exist');   // when you start to type password
 
   // ------------Methods------------
 
