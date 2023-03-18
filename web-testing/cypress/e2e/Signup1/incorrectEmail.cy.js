@@ -7,7 +7,7 @@ describe('Signup Page 1 - Incorrect email', () => {
     signupObj.validateSignup1Elements();    
   })
 
-  it('Signup for new account with an email missing @ and .com', () => {
+  it("Signup for new account with an email missing @ and .com", () => {
     const signupObj = new Signup();
     signupObj.visitWebsite();
     signupObj.setEmail("incorrectEmail");  
