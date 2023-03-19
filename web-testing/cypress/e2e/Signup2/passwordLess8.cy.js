@@ -1,6 +1,6 @@
 import Signup from "../../pageObjects/signupPage.js";
 
-describe("Signup Page 2 - Normal case", () => {
+describe("Signup Page 2 - Password less than 8 characters", () => {
   it("Validate that all elements exist in Signup 1", () => {
     const signupObj = new Signup();
     signupObj.visitWebsite();
@@ -18,7 +18,7 @@ describe("Signup Page 2 - Normal case", () => {
     signupObj.validateSignup2Elements();
   });
 
-  it.only("Validate terms and conditions popup when all fields are filled", () => {
+  it("Validate Your password message according to input less than 8 characters", () => {
     const signupObj = new Signup();
     signupObj.visitWebsite();
 
@@ -27,11 +27,10 @@ describe("Signup Page 2 - Normal case", () => {
       signupObj.setEmail(data.email);
       cy.get(signupObj.continueBtn).click();
       cy.get(signupObj.confirmEmailInput).type(data.email);
-        cy.get(signupObj.fnameInput).type(data.Fname);
+      cy.get(signupObj.fnameInput).type(data.Fname);
       cy.get(signupObj.lnameInput).type(data.Lname);
-
     });
-    // change accordingly
+    cy.get(signupObj.passwordInput).type("123456");
 
     cy.get(signupObj.passwordStrengthIndicator).should("exist");
     cy.get(signupObj.yourPasswordMsg).should("have.text", "Your password ");
@@ -41,9 +40,13 @@ describe("Signup Page 2 - Normal case", () => {
       "must be at least 8 characters"
     );
     cy.get(signupObj.createAccountBtn).click();
-    cy.get(signupObj.passwordRequiredMsg).should('exist');
-    cy.get(signupObj.passwordRequiredMsg).should("have.text", "Field required");
+    cy.get(signupObj.passwordLess8Alert).should('exist');
+    cy.get(signupObj.passwordLess8Alert).should(
+      "have.text",
+      "Password must be at least 8 characters"
+    );
 
     cy.get(signupObj.termsNconditionsPopup).should("not.exist");
+
   });
 });
