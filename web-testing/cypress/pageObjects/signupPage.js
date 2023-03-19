@@ -42,6 +42,9 @@ class Signup {
   confirmEmailMsg = ".eds-field-styled__annotation";
   FnameMsg = ".eds-field-styled__annotation";
   LnameMsg = ".eds-field-styled__annotation";
+  passwordRequiredMsg = ".eds-field-styled__annotation";
+  passwordLess8Msg = ".eds-l-pad-top-2 > :nth-child(2)";
+  passwordLess8Alert = ".eds-field-styled__annotation";
 
   // ------------Methods------------
 
