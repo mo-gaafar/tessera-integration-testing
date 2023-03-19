@@ -1,6 +1,6 @@
 import Signup from "../../pageObjects/signupPage.js";
 
-describe("Signup Page 2 - Normal case", () => {
+describe("Signup Page 2 - Empty confirm email", () => {
   it("Validate that all elements exist in Signup 1", () => {
     const signupObj = new Signup();
     signupObj.visitWebsite();
@@ -18,7 +18,7 @@ describe("Signup Page 2 - Normal case", () => {
     signupObj.validateSignup2Elements();
   });
 
-  it("Validate terms and conditions popup when all fields are filled", () => {
+  it("Validate that signup page gives alert for missing confirm email field", () => {
     const signupObj = new Signup();
     signupObj.visitWebsite();
 
@@ -26,16 +26,24 @@ describe("Signup Page 2 - Normal case", () => {
       const signupObj = new Signup();
       signupObj.setEmail(data.email);
       cy.get(signupObj.continueBtn).click();
-      cy.get(signupObj.confirmEmailInput).type(data.email);
       cy.get(signupObj.fnameInput).type(data.Fname);
       cy.get(signupObj.lnameInput).type(data.Lname);
       cy.get(signupObj.passwordInput).type(data.password);
     });
+
+    
     cy.get(signupObj.passwordStrengthIndicator).should("exist");
     cy.get(signupObj.yourPasswordMsg).should("have.text", "Your password ");
     cy.get(signupObj.passwordStrengthMsg).should("exist");
     cy.get(signupObj.passwordStrengthMsg).should("have.text", "is very strong");
+    cy.get(signupObj.confirmEmailMsg).should('be.visible');
+    cy.get(signupObj.confirmEmailMsg).should(
+      "have.text",
+      "Email address doesn't match. Please try again"
+    );
+    
+    cy.get(signupObj.termsNconditionsPopup).should("not.exist");
     cy.get(signupObj.createAccountBtn).click();
-    cy.get(signupObj.termsNconditionsPopup).should("be.visible");
+    cy.url().should("be.equal", "https://www.eventbrite.com/signin/signup");
   });
 });

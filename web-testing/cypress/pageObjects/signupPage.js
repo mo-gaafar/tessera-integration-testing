@@ -39,6 +39,9 @@ class Signup {
   yourPasswordMsg = ".eds-l-pad-top-2 > :nth-child(1)";
   passwordStrengthMsg = ".eds-l-pad-top-2 > .eds-text-weight--heavy";
   termsNconditionsPopup = "#edsModalContentChildren";
+  confirmEmailMsg = ".eds-field-styled__annotation";
+  FnameMsg = ".eds-field-styled__annotation";
+  LnameMsg = ".eds-field-styled__annotation";
 
   // ------------Methods------------
 
