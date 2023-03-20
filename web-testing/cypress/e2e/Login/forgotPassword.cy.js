@@ -45,6 +45,7 @@ describe("Login - Forgot password", () => {
     cy.wait(3000);
     cy.get(loginObj.forgotPasswordClose).should("exist");
     cy.get(loginObj.forgotPasswordClose).click();
+    
 
   
   });
