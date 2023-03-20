@@ -7,7 +7,7 @@ class Login {
   loginBtn = ":nth-child(4) > div > .eds-btn";
   orDivider = ".split-container__divider-text";
   signinLinkBtn = '[data-testid="signin-forgot-password-button"]'; // to be removed when Tessera is deployed
-  googleLoginBtn = ".social-login__container > .eds-btn";
+  googleLoginBtn = "button[data-automation='google-button-login']";
   facebookLoginBtn = ":nth-child(1) > .eds-card > .secondary-method";
   otherOptionsText = "div[class='other-login-options'] div p";
   signupLink = "div[class='eds-show-up-md'] a[type='button']";
@@ -36,6 +36,8 @@ class Login {
   forgotPasswordClose = ".eds-modal__close-button > .eds-icon-button";
   signupRedirect =
     '.eds-show-up-md > .eds-text-weight--heavy > [data-testid="go-to-signup"]';
+  passwordShowHide =
+    "button[class='eds-btn--button eds-btn--none eds-btn--icon-only']";
 
   // Home Page
   navbar = ".consumer-header__desktop";
