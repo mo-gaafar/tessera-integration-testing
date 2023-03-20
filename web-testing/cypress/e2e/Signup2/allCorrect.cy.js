@@ -1,15 +1,10 @@
 import Signup from "../../pageObjects/signupPage.js";
 
 describe("Signup Page 2 - Normal case", () => {
-  it("Validate that all elements exist in Signup 1", () => {
+  beforeEach("Validate that all elements exist in Signup 2 - after correct email is written", () => {
     const signupObj = new Signup();
     signupObj.visitWebsite();
     signupObj.validateSignup1Elements();
-  });
-
-  it("Validate that all elements exist in Signup 2 - after correct email is written", () => {
-    const signupObj = new Signup();
-    signupObj.visitWebsite();
     cy.fixture("userMichael.json").then((data) => {
       const signupObj = new Signup();
       signupObj.setEmail(data.email);
@@ -20,12 +15,8 @@ describe("Signup Page 2 - Normal case", () => {
 
   it("Validate terms and conditions popup when all fields are filled", () => {
     const signupObj = new Signup();
-    signupObj.visitWebsite();
-
     cy.fixture("userMichael.json").then((data) => {
       const signupObj = new Signup();
-      signupObj.setEmail(data.email);
-      cy.get(signupObj.continueBtn).click();
       cy.get(signupObj.confirmEmailInput).type(data.email);
       cy.get(signupObj.fnameInput).type(data.Fname);
       cy.get(signupObj.lnameInput).type(data.Lname);

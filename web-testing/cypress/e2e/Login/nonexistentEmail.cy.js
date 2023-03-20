@@ -1,7 +1,7 @@
 import Login from "../../pageObjects/loginPage.js";
 
 describe("Login - Nonexistent email i.e. doesn't have an account", () => {
-  it("Validate that all elements exist in Login", () => {
+  beforeEach("Validate that all elements exist in Login", () => {
     const loginObj = new Login();
     loginObj.visitWebsite();
     loginObj.validateLoginElements();
@@ -9,8 +9,6 @@ describe("Login - Nonexistent email i.e. doesn't have an account", () => {
 
   it("Unsuccessful Login due to nonexistent email", () => {
     const loginObj = new Login();
-    loginObj.visitWebsite();
-
     cy.fixture("userRosa.json").then((data) => {
       const loginObj = new Login();
       loginObj.setEmail(data.email);

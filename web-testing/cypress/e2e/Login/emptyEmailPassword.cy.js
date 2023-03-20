@@ -1,15 +1,14 @@
 import Login from "../../pageObjects/loginPage.js";
 
 describe("Login - Empty email & password", () => {
-  it("Validate that all elements exist in Login", () => {
+  beforeEach("Validate that all elements exist in Login", () => {
     const loginObj = new Login();
     loginObj.visitWebsite();
     loginObj.validateLoginElements();
   });
 
-  it.only("Unsuccessful Login due to empty email & password", () => {
+  it("Unsuccessful Login due to empty email & password", () => {
     const loginObj = new Login();
-    loginObj.visitWebsite();
     cy.get(loginObj.loginBtn).click();
     cy.get(loginObj.navbar).should("not.exist");
     cy.get(loginObj.emptyEmailMsg).should("exist");
