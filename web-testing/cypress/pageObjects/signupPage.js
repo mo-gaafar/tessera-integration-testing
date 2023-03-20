@@ -47,6 +47,8 @@ class Signup {
   passwordRequiredMsg = ".eds-field-styled__annotation";
   passwordLess8Msg = ".eds-l-pad-top-2 > :nth-child(2)";
   passwordLess8Alert = ".eds-field-styled__annotation";
+  passwordShowHide =
+    ".eds-password-icon__wrapper > .eds-icon-button > .eds-btn--button";
 
   // ------------Methods------------
 
