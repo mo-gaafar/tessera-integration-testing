@@ -34,6 +34,8 @@ class Login {
   sentAlinkMsg = '[data-testid="page-header-subtitle"] > div';
   forSecurityMsg = '[data-testid="page-header-subtitle"] > div';
   forgotPasswordClose = ".eds-modal__close-button > .eds-icon-button";
+  signupRedirect =
+    '.eds-show-up-md > .eds-text-weight--heavy > [data-testid="go-to-signup"]';
 
   // Home Page
   navbar = ".consumer-header__desktop";
