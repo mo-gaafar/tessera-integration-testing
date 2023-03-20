@@ -1,7 +1,7 @@
 import Signup from "../../pageObjects/signupPage.js";
 
 describe('Signup Page 1 - Nonexistent email', () => {
-  it('Validate that all elements exist', () => {
+  beforeEach('Validate that all elements exist', () => {
     const signupObj = new Signup();
     signupObj.visitWebsite(); 
     signupObj.validateSignup1Elements();    
@@ -9,7 +9,6 @@ describe('Signup Page 1 - Nonexistent email', () => {
 
   it.only('Signup for new account with email that does not exist', () => {
     const signupObj = new Signup();
-    signupObj.visitWebsite();
     signupObj.setEmail("hello@gmail.com");  
     cy.get(signupObj.continueBtn).click();
     cy.get(signupObj.confirmEmailInput).should('not.exist');
@@ -18,8 +17,14 @@ describe('Signup Page 1 - Nonexistent email', () => {
     cy.get(signupObj.emailIconBackground).should('exist');
     cy.get(signupObj.emailIcon).should('exist');
     cy.get(signupObj.closePopupBtn).should('be.visible');
-    cy.wait(5000)
+    cy.wait(3000)
     cy.get(signupObj.closePopupBtn).click();
+    cy.get(signupObj.errorNotification).should('exist');
+    cy.get(signupObj.weSentEmailMsg).should("exist");
+    cy.get(signupObj.weSentEmailMsg).should(
+      "have.text",
+      "We sent you an email to hello@gmail.com with intructions to set your password.   "
+    );
     
   })
 })

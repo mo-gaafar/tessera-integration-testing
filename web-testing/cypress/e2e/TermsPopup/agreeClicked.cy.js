@@ -2,7 +2,7 @@ import TermsNconditions from "../../pageObjects/termsNconditions.js";
 import Signup from "../../pageObjects/signupPage.js";
 
 describe("Signup Page - Agree to terms", () => {
-  it.only("Validate terms and conditions popup elements exist", () => {
+  it("Validate terms and conditions popup elements exist", () => {
     const signupObj = new Signup();
     const termObj = new TermsNconditions();
 

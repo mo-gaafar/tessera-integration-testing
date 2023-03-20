@@ -1,7 +1,7 @@
 import Login from "../../pageObjects/loginPage.js";
 
 describe('Login - Incorrect email', () => {
-  it('Validate that all elements exist in Login', () => {
+  beforeEach('Validate that all elements exist in Login', () => {
     const loginObj = new Login();
     loginObj.visitWebsite(); 
     loginObj.validateLoginElements();
@@ -9,7 +9,6 @@ describe('Login - Incorrect email', () => {
 
   it('Unsuccessful Login due to incorrect email', () => {
     const loginObj = new Login();
-    loginObj.visitWebsite();
     loginObj.setEmail("incorrectEmail");  
 
     cy.fixture('userIam.json').then((data)=>{

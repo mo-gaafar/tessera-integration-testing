@@ -1,7 +1,7 @@
 import Login from "../../pageObjects/loginPage.js";
 
 describe("Login - Empty email", () => {
-  it("Validate that all elements exist in Login", () => {
+  beforeEach("Validate that all elements exist in Login", () => {
     const loginObj = new Login();
     loginObj.visitWebsite();
     loginObj.validateLoginElements();
@@ -9,8 +9,6 @@ describe("Login - Empty email", () => {
 
   it("Unsuccessful Login due to empty email", () => {
     const loginObj = new Login();
-    loginObj.visitWebsite();
-
     cy.fixture("userIam.json").then((data) => {
       const loginObj = new Login();
       loginObj.setPassword(data.password);

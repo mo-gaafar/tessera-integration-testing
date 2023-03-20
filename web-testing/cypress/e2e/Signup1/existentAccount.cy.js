@@ -1,11 +1,14 @@
-import TermsNconditions from "../../pageObjects/termsNconditions.js";
 import Signup from "../../pageObjects/signupPage.js";
 
-describe("Signup Page - Agree to terms", () => {
-  it.only("Validate terms and conditions popup elements exist", () => {
+describe("Signup Page - Existent account", () => {
+  beforeEach("Validate that all elements exist", () => {
     const signupObj = new Signup();
-
     signupObj.visitWebsite();
+    signupObj.validateSignup1Elements();
+  });
+
+  it("Validate alert when existent account is used to signup", () => {
+    const signupObj = new Signup();
 
     cy.fixture("userIam.json").then((data) => {
       const signupObj = new Signup();

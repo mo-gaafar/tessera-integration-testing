@@ -3,13 +3,13 @@ import Signup from "../../pageObjects/signupPage.js";
 
 describe("Signup Page 2 - Normal case", () => {
 
-  it.only("Validate terms and conditions popup elements exist", () => {
+  it("Validate terms and conditions popup elements exist", () => {
     const signupObj = new Signup();
     const termObj = new TermsNconditions();
 
     signupObj.visitWebsite();
 
-    cy.fixture("userMichael.json").then((data) => {
+    cy.fixture("userRosa.json").then((data) => {
       const signupObj = new Signup();
       signupObj.setEmail(data.email);
       cy.get(signupObj.continueBtn).click();

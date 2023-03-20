@@ -28,6 +28,7 @@ class Signup {
   alertLogin =
     "div[class='eds-notification-bar__content-child'] button[type='button']";
   alertIcon = ".eds-notification-bar__icon";
+  weSentEmailMsg = ".eds-notification-bar__content-child";
 
   // Signup2
   confirmEmailInput = '[data-testid="auth-lib-confirm-email-field"]';

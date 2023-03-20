@@ -20,8 +20,6 @@ describe("Signup Page 2 - Password less than 8 characters", () => {
 
     cy.fixture("userMichael.json").then((data) => {
       const signupObj = new Signup();
-      signupObj.setEmail(data.email);
-      cy.get(signupObj.continueBtn).click();
       cy.get(signupObj.confirmEmailInput).type(data.email);
       cy.get(signupObj.fnameInput).type(data.Fname);
       cy.get(signupObj.lnameInput).type(data.Lname);
