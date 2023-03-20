@@ -25,9 +25,5 @@ describe("Login - Normal case", () => {
       cy.wait(2000);
       cy.get(loginObj.passwordShowHide).click();
 
-
-    // cy.get(loginObj.navbar).should("not.exist");
-    // cy.get(loginObj.loginBtn).click();
-    // cy.get(loginObj.navbar).should("exist");
   });
 });
