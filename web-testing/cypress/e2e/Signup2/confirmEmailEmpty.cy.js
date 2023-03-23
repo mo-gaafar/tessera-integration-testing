@@ -5,7 +5,7 @@ describe("Signup Page 2 - Empty confirm email", () => {
     const signupObj = new Signup();
     signupObj.visitWebsite();
     signupObj.validateSignup1Elements();
-    cy.fixture("userMichael.json").then((data) => {
+    cy.fixture("userJim.json").then((data) => {
       const signupObj = new Signup();
       signupObj.setEmail(data.email);
     });
@@ -15,7 +15,7 @@ describe("Signup Page 2 - Empty confirm email", () => {
 
   it("Validate that signup page gives alert for missing confirm email field", () => {
     const signupObj = new Signup();
-    cy.fixture("userMichael.json").then((data) => {
+    cy.fixture("userJim.json").then((data) => {
       const signupObj = new Signup();
       cy.get(signupObj.fnameInput).type(data.Fname);
       cy.get(signupObj.lnameInput).type(data.Lname);

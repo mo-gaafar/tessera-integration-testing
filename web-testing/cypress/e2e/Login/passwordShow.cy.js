@@ -9,7 +9,7 @@ describe("Login - Normal case", () => {
 
   it("Successful Login", () => {
     const loginObj = new Login();
-    cy.fixture("userIam.json").then((data) => {
+    cy.fixture("userMichael.json").then((data) => {
       const loginObj = new Login();
       loginObj.setEmail(data.email);
       loginObj.setPassword(data.password);

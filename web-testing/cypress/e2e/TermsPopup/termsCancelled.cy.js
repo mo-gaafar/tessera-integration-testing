@@ -9,7 +9,7 @@ describe("Signup Page 2 - Normal case", () => {
 
     signupObj.visitWebsite();
 
-    cy.fixture("userRosa.json").then((data) => {
+    cy.fixture("userMoNasser.json").then((data) => {
       const signupObj = new Signup();
       signupObj.setEmail(data.email);
       cy.get(signupObj.continueBtn).click();

@@ -5,7 +5,7 @@ describe("Signup Page 2 - Empty last name", () => {
     const signupObj = new Signup();
     signupObj.visitWebsite();
     signupObj.validateSignup1Elements();
-    cy.fixture("userMichael.json").then((data) => {
+    cy.fixture("userRosa.json").then((data) => {
       const signupObj = new Signup();
       signupObj.setEmail(data.email);
     });
@@ -15,7 +15,7 @@ describe("Signup Page 2 - Empty last name", () => {
 
   it("Validate that signup page gives alert for missing last name field", () => {
     const signupObj = new Signup();
-    cy.fixture("userMichael.json").then((data) => {
+    cy.fixture("userRosa.json").then((data) => {
       const signupObj = new Signup();
       cy.get(signupObj.confirmEmailInput).type(data.email);
       cy.get(signupObj.fnameInput).type(data.Fname);

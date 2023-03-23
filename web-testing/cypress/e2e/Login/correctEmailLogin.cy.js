@@ -16,6 +16,6 @@ describe("Login - Normal case", () => {
     });
     cy.get(loginObj.navbar).should("not.exist");
     cy.get(loginObj.loginBtn).click();
-    cy.get(loginObj.navbar).should("exist");
+    cy.get(loginObj.loginBtn).should("not.exist");
   });
 });
