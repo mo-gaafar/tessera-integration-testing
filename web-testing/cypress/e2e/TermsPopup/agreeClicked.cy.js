@@ -8,7 +8,7 @@ describe("Signup Page - Agree to terms", () => {
 
     signupObj.visitWebsite();
 
-    cy.fixture("userMichael.json").then((data) => {
+    cy.fixture("userMoNasser.json").then((data) => {
       const signupObj = new Signup();
       signupObj.setEmail(data.email);
       cy.get(signupObj.continueBtn).click();

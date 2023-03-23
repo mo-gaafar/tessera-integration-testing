@@ -11,7 +11,7 @@ describe('Login - Incorrect email', () => {
     const loginObj = new Login();
     loginObj.setEmail("incorrectEmail");  
 
-    cy.fixture('userIam.json').then((data)=>{
+    cy.fixture('userMichael.json').then((data)=>{
       const loginObj = new Login();
       loginObj.setPassword(data.password)
     })

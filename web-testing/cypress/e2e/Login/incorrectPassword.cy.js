@@ -9,7 +9,7 @@ describe("Login - Incorrect password", () => {
 
   it("Unsuccessful Login due to incorrect password", () => {
     const loginObj = new Login();
-    cy.fixture("userIam.json").then((data) => {
+    cy.fixture("userMichael.json").then((data) => {
       const loginObj = new Login();
       loginObj.setEmail(data.email);
     });

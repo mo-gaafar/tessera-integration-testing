@@ -5,7 +5,7 @@ describe("Signup Page 2 - Normal case", () => {
     const signupObj = new Signup();
     signupObj.visitWebsite();
     signupObj.validateSignup1Elements();
-    cy.fixture("userMichael.json").then((data) => {
+    cy.fixture("userJim.json").then((data) => {
       const signupObj = new Signup();
       signupObj.setEmail(data.email);
     });
@@ -15,7 +15,7 @@ describe("Signup Page 2 - Normal case", () => {
 
   it("Validate that signup page gives alert for missing first name field", () => {
     const signupObj = new Signup();
-    cy.fixture("userMichael.json").then((data) => {
+    cy.fixture("userJim.json").then((data) => {
       const signupObj = new Signup();
       cy.get(signupObj.confirmEmailInput).type(data.email);
       cy.get(signupObj.lnameInput).type(data.Lname);
