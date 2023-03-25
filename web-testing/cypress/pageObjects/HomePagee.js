@@ -3,7 +3,7 @@ class HomePage{
     Logo="div[class='consumer-header__mobile-links eds-align--space-between'] a[class='consumer-header__logo-link']"
     SearchBar='[data-testid="consumer-global-header-search"] > [data-testid="input-field-wrapper"] > .eds-field-styled__border-simulation > .eds-field-styled__internal > .eds-field-styled__input-container'
     OrganizeDropdown='.consumer-header__menus > :nth-child(1) > :nth-child(1) > .eds-dropdown-menu > .eds-dropdown-menu__link'
-    HelpDropdown=".consumer-header__menus > :nth-child(1) > :nth-child(1) > .eds-dropdown-menu > .eds-dropdown-menu__link"
+    HelpDropdown=':nth-child(2) > :nth-child(1) > .eds-dropdown-menu > .eds-dropdown-menu__link > .eds-dropdown-menu__contents > .consumer-header__menu-label'
     CreateEvent=".consumer-header__quick-link.consumer-header__quick-link--cta.consumer-header__menu-label"
     LoginButton='[data-testid="consumer-header-links-test"] > [data-testid="consumer-header-quick-links"] > [href="https://www.eventbrite.com/signin/?referrer=%2F"]'
     SignupButton='[data-testid="consumer-header-links-test"] > [data-testid="consumer-header-quick-links"] > [href="https://www.eventbrite.com/signin/signup/?referrer=%2F"]'
@@ -11,32 +11,51 @@ class HomePage{
     FindYourNextTicketBtn=".eds-link"
     LocationPicker='#locationPicker'
     NavigationBar='.eds-tabs__navigation-list'
-    AllBtn="#tab0 > .eds-btn--button"
-    ForYouBtn="#tab1 > .eds-btn--button"
-    OnlineBtn="#tab2 > .eds-btn--button"
-    TodayBtn="#tab3 > .eds-btn--button"
-    ThisWeekendBtn="#tab4 > .eds-btn--button"
-    WomenBtn="#tab6 > .eds-btn--button"
-    FreeBtn="#tab10 > .eds-btn--button"
-    MusicBtn="#tab11 > .eds-btn--button"
-    FoodBtn="#tab12 > .eds-btn--button"
-    CharityBtn="#tab13 > .eds-btn--button"
+    AllBtn="#tab0"
+    ForYouBtn="#tab1"
+    OnlineBtn="#tab2"
+    TodayBtn="#tab3"
+    ThisWeekendBtn="#tab4"
+    WomenBtn="#tab6"
+    FreeBtn="#tab10"
+    MusicBtn="#tab11"
+    FoodBtn="#tab12"
+    CharityBtn="#tab13"
     CategoriesMsg=".home__category-tiles--title"
     MusicIcon="#music-note_svg__eds-icon--music-note_svg"
     HolidayIcon="#holiday_svg__eds-icon--holiday_svg"
     HobbiesIcon="#game_svg__eds-icon--game_svg"
-    FoodIcon="#game_svg__eds-icon--game_svg"
-    ArtsIcon="#game_svg__eds-icon--game_svg"
+    FoodIcon="#cocktail_svg__eds-icon--cocktail_svg"
+    ArtsIcon="#mask_svg__eds-icon--mask_svg"
     HealthIcon="#heart_svg__eds-icon--heart_svg"
     BusniesIcon=".briefcase_svg__eds-icon--briefcase_svg"
     SportsIcon="#shoe_svg__eds-icon--sport_base"
     SeeMoreBtn=".eds-g-cell.eds-g-cell-6-12.eds-g-cell-sw-4-12"
-    ComedyBtn="div[class='home__interests-selector__tag-container'] div div:nth-child(1)"
-    Food="div[class='home__interests-selector__tag-container'] div div:nth-child(1) span:nth-child(1)"
-    Education="div[class='home__interests-selector__tag-container'] div div:nth-child(1) span:nth-child(1)"
-    Pop="div[class='home__interests-selector__tag-container'] div div:nth-child(1) span:nth-child(1)"
-    Design="div[class='home__interests-selector__container'] div:nth-child(5) span:nth-child(1)"
-    R_b="div[class='home__interests-selector__container'] div:nth-child(5) span:nth-child(1)"
+    ComedyBtn=":nth-child(1) > .eds-tag__text"
+    Food=":nth-child(2) > .eds-tag__text"
+    Education=":nth-child(3) > .eds-tag__text"
+    Pop=":nth-child(4) > .eds-tag__text"
+    Design=":nth-child(5) > .eds-tag__text"
+    R_b=":nth-child(6) > .eds-tag__text"
+    HipHop=":nth-child(7) > .eds-tag__text"
+    Film=":nth-child(8) > .eds-tag__text"
+    PersonalHealth=":nth-child(9) > .eds-tag__text"
+    Blues=":nth-child(10) > .eds-tag__text"
+    Travel=":nth-child(11) > .eds-tag__text"
+    Rock=":nth-child(12) > .eds-tag__text"
+    Yoga=":nth-child(13) > .eds-tag__text"
+    Country=":nth-child(14) > .eds-tag__text"
+    startups=":nth-child(15) > .eds-tag__text"
+    Classic=":nth-child(16) > .eds-tag__text"
+    MentalHealth=":nth-child(17) > .eds-tag__text"
+    TV=":nth-child(18) > .eds-tag__text"
+    ALT=":nth-child(19) > .eds-tag__text"
+    MUSICAL=":nth-child(20) > .eds-tag__text"
+    emailInput = "#email";
+    passwordInput = "#password";
+    loginBtn = ":nth-child(4) > div > .eds-btn";
+    Likes="#heart-chunky_svg__eds-icon--user-chunky_svg"
+    Tickets="div[class='consumer-header__links'] div:nth-child(2) a:nth-child(1)"
 
 
     // CategoriesBrowse='.tile-group'
@@ -88,6 +107,11 @@ class HomePage{
      cy.get(this.Design).should('exist')
 
     }
-
+    OrganizeDropDown(){
+        cy.get(this.OrganizeDropdown).should('be.visible').trigger('mouseover')
+    }
+    HelpDropDown(){
+        cy.get(this.HelpDropdown).should('be.visible').trigger('mouseover')
+    }
 }
 export default HomePage;
