@@ -19,15 +19,6 @@ describe('Tickets', () => {
         cy.wait(5000)
         cy.url().should('include','collections')
         cy.go('back')
-        // cy.get(TI.SeeEvent).click()
-        // cy.wait(5000)
-        // cy.url().should('include','following')
-        // cy.go('back')
-        // cy.get(TI.Followingbtn).click().should('have.text','Following')
-
-  
-      
-  
   
     })
     
