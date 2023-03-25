@@ -3,7 +3,9 @@ import HomePage from "../../PageObjects/HomePagee"
 describe('buttonMenu', () => {
     it("events length", () => {
         cy.visit('https://www.eventbrite.com/')
-        cy.get('[href="/b/egypt--al-qahirah/music/"] > .tile > .tile--name').scrollIntoView();
+        cy.get(
+          "#music-note_svg__eds-icon--music-note_svg"
+        ).scrollIntoView();
         cy.get(".eds-event-card-content__image-wrapper.eds-event-card-content__image-wrapper--sharp-corners")
          .then(($value) => {
             length = $value.length
@@ -19,7 +21,7 @@ describe('buttonMenu', () => {
         const home=new HomePage();
         cy.visit('https://www.eventbrite.com/')
         cy.get(
-          '[href="/b/egypt--al-qahirah/music/"] > .tile > .tile--name'
+          "#music-note_svg__eds-icon--music-note_svg"
         ).scrollIntoView();
         cy.get(home.ComedyBtn).click()
         cy.url().should('include','sign')

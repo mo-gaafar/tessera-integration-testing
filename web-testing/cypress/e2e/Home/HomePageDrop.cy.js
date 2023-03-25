@@ -3,7 +3,7 @@ import HomePage from "../../PageObjects/HomePagee"
 describe('HomePageDropDown', () => {
     
   
-    it.skip('Organize', () => {
+    it('Organize', () => {
 
      const home=new HomePage();
      
@@ -32,7 +32,7 @@ describe('HomePageDropDown', () => {
 
     })
     
-    it.skip('help', () => {
+    it('help', () => {
 
         const home=new HomePage();
         
