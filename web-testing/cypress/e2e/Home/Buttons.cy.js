@@ -41,7 +41,7 @@ describe('buttonMenu', () => {
      cy.get(home.CharityBtn).invoke("attr","class").should('include',"selected")
      cy.get(home.ForYouBtn).click()
      cy.wait(3000)
-     cy.get("#cross-chunky_svg__eds-icon--cross-chunky_svg").click({force:true})
+    //  cy.get("#cross-chunky_svg__eds-icon--cross-chunky_svg").click({force:true})
      cy.get(home.ForYouBtn).invoke("attr","class").should('include',"selected")
 
      
